@@ -9,6 +9,14 @@ function CalculateWithWidth(n){
         diamondsShape = i>=n? diamondsShape.slice(3): diamondsShape;
     };
     document.body.style.textAlign = 'center';
+    const button = document.createElement('button'); 
+    button.type = 'button'; 
+    button.innerText = 'Create New Diamond Shape'; 
+    button.className = 'btn btn-primary';
+    button.onclick = function(){
+        location.reload();
+    }
+    document.body.appendChild(button); 
     document.body.style.lineHeight = 0.5;
 };
 
@@ -20,6 +28,14 @@ function CalculateWithHeight(n){
         diamondsShape = i>n/2? diamondsShape.slice(4): diamondsShape;
     };
     document.body.style.textAlign = 'center';
+    const button = document.createElement('button'); 
+    button.type = 'button'; 
+    button.innerText = 'Create New Diamond Shape'; 
+    button.className = 'btn btn-primary';
+    button.onclick = function(){
+        location.reload();
+    }
+    document.body.appendChild(button); 
     document.body.style.lineHeight = 0.1;
 };
 
@@ -43,7 +59,7 @@ const getValueInputHeight = () => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Prueba 150 %</title>
 </head>
 <body class="container">
     
@@ -53,6 +69,6 @@ const getValueInputHeight = () => {
     <input type="text"  placeholder="Altura Rombo" id="DiamondHeight" />
     <button class="btn btn-success" onclick="getValueInputHeight()">Crear Rombo Por Altura</button>
 
-
+    
 </body>
 </html>
