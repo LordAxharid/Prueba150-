@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<script>
+function CalculateWithWidth(n){
+    var i, diamondsShape = '*';
+    for(i=1; i< 2*n; i++){
+        document.write('<pre>' + diamondsShape + '</pre>');
+        diamondsShape += i<n? "  *": '';
+        diamondsShape = i>=n? diamondsShape.slice(3): diamondsShape;
+    };
+    document.body.style.textAlign = 'center';
+    document.body.style.lineHeight = 0.5;
+};
+
+function CalculateWithHeight(n){
+    var i, diamondsShape = '*';
+    for(i=1; i <= n+1; i++){
+        document.write('<pre>' + diamondsShape + '</pre>');
+        diamondsShape += i< n/2? ' * *': '';
+        diamondsShape = i>n/2? diamondsShape.slice(4): diamondsShape;
+    };
+    document.body.style.textAlign = 'center';
+    document.body.style.lineHeight = 0.1;
+};
+
+const getValueInputWidth = () => {
+    let inputValue = document.getElementById("rombo").value;
+    CalculateWithWidth(inputValue)
+}
+
+const getValueInputHeight = () => {
+    let inputValueHeight = document.getElementById("DiamondHeight").value;
+    CalculateWithHeight(inputValueHeight)
+}
+
+
+
+</script>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="container">
+    
+    <input type="text" placeholder="Ancho Rombo" id="rombo" />
+    <button  class="btn btn-primary" onclick="getValueInputWidth()">Crear Rombo Por Ancho</button>
+
+    <input type="text"  placeholder="Altura Rombo" id="DiamondHeight" />
+    <button class="btn btn-success" onclick="getValueInputHeight()">Crear Rombo Por Altura</button>
+
+
+</body>
+</html>
